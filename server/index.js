@@ -89,7 +89,7 @@ DELETE /user/:id สำหรับลบ users รายคน (ตาม id �
 
 // path = GET / users สำหรับ get users ทั้งหมดที่บันทึกไว้
 app.get('/user', async (req, res) => {
-  const result = await conn.query('SELECT * FROM user')
+  const result = await conn.query('SELECT * FROM users')
     res.json(result[0])
 })
 
@@ -174,7 +174,7 @@ app.get('/user/:id', async (req, res) => {
   try {
     let id = req.params.id;
     const results = await conn.query(
-      'DELETE from user WHERE id = ?', id)
+      'DELETE from users WHERE id = ?', id)
     res.json({
       message: 'Delete user successfully',
       data: results[0]

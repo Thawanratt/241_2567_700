@@ -52,10 +52,10 @@ window.onload = async() => {
 const validateData = (userData) => {
     let errors = [];
 
-    if (!userData.firstName) {
+    if (!userData.firstname) {
         errors.push('กรุณากรอกชื่อ');
     }
-    if (!userData.lastName) {
+    if (!userData.lastname) {
         errors.push('กรุณากรอกนามสกุล');
     }
     if (!userData.age) {
@@ -122,7 +122,7 @@ const submitData = async () => {
         htmlData += '<ul>';
 
         if (error.response) {
-            console.log(error.response);
+            console.log(error.response)
             error.message = error.response.data.message;
             error.errors = error.response.data.errors;
         }
