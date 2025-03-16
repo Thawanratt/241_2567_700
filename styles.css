@@ -3,69 +3,121 @@
     src: url(Kanit-2/Kanit-Regular.ttf);
 }
 body{
-    font-family: 'Kanit';
+    font-family: 'Kanit', sans-serif;
+    background: linear-gradient(to right, #00c6ff, #0072ff); /* น้ำเงินเข้มไปฟ้าอ่อน */
+    color: #f5f5f5;
+    margin: 0;
+    padding: 0;
 }
-.container{
+
+.container {
     width: 100%;
     max-width: 640px;
-    margin-left: auto;
-    margin-right: auto;
-    background: rgb(166, 181, 126);
+    margin: 40px auto;
+    background: rgba(0, 51, 102, 0.8); /* น้ำเงินเข้ม */
     padding: 20px;
     box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
-.header{
+
+.header {
     font-size: 30px;
     text-align: center;
     margin-bottom: 20px;
+    font-weight: bold;
+    color: #fff; /* สีขาว */
 }
-.header-form{
+
+.header-form {
     width: 200px;
 }
-.flex{
+
+.flex {
     display: flex;
+    gap: 10px;
 }
-.form-input{
+
+.form-input {
     margin-bottom: 10px;
 }
-input.form, textarea{
-    border: 1px solid #ccc;
-    width: 100%;
+
+input.form, textarea {
+    border: 1px solid #4caf50; /* สีเขียวสดใส */
+    width: 95%;
+    padding: 5px;
+    border-radius: 7px;
+    font-size: 16px;
+    background-color: #777 /* พื้นหลังสีเทาเข้ม */
+    color: #f5f5f5;
+    transition: all 0.3s ease;
 }
-.center{
+
+input.form:focus, textarea:focus {
+    border-color: #00c6ff; /* น้ำเงินเมื่อ focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 198, 255, 0.3); /* กลุ่มน้ำเงินอ่อน */
+}
+
+.center {
     text-align: center;
 }
-.button{
-    border: 10%;
+
+.button {
+    border: none;
     width: 50%;
     height: 40px;
+    background-color: #4caf50; /* เขียวสดใส */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    display: block;
+    margin: 10px auto;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.button:hover {
+    background-color: #388e3c; /* เขียวเข้มขึ้นเมื่อ hover */
+    transform: scale(1.05);
+}
+
+.button:active {
+    background-color: #2e7d32; /* เขียวเข้มเมื่อ active */
+    transform: scale(0.98);
 }
 
 .message {
-    margin-button: 10px;
+    margin-bottom: 10px;
     padding: 10px;
-    background-color: #lightgray;
+    border-radius: 5px;
     display: none;
 }
 
 .message.success {
-    background-color: #lightgreen;
+    background-color: #2e7d32; /* เขียวสำหรับ success */
     display: block;
+    color: #d4edda;
+    border: 1px solid #1b5e20;
 }
 
 .message.danger {
-    background-color: #lightcoral;
+    background-color: #c62828; /* สีแดงสำหรับ error */
     display: block;
+    color: #f8d7da;
+    border: 1px solid #7f0000;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
     .flex {
         flex-direction: column;
     }
-    .header{
+    .header {
         font-size: 24px;
     }
-    .button{
+    .button {
         width: 100%;
     }
 }

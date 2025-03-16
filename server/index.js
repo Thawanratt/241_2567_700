@@ -6,10 +6,9 @@ const app = express();
 
 const port = 8000;
 app.use(bodyParser.json());
-
 app.use(cors());
 
-let users = []
+let user = []
 let conn = null
 
 const initMySQL = async () => {
@@ -128,7 +127,7 @@ app.post('/user', async (req, res) => {
 app.get('/user/:id', async (req, res) => {
   try {
   let id = req.params.id;
-  const result = await conn.query('SELECT * FROM user WHERE id = ?', id)
+  const result = await conn.query('SELECT * FROM users WHERE id = ?', id)
   if (result[0].length == 0) {
     throw { statuscode: 404, message: 'User not found' }
     }

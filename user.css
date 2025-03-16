@@ -1,0 +1,54 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: lightblue;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: center; 
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #ff5733; 
+    color: white;
+    font-weight: bold;
+}
+
+td {
+    font-size: 18px;
+    color: #666;
+}
+
+
+td button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-block;
+    width: 80px; /* กำหนดขนาดปุ่มให้เท่ากัน */
+}
+
+td .btn-edit {
+    background-color: #00b706; /* สีเขียวสำหรับปุ่ม Edit */
+    color: white;
+}
+
+td .btn-edit:hover {
+    background-color: #45a049; /* สีเขียวเข้มเมื่อเมาส์วาง */
+}
+
+td .btn-delete {
+    background-color: #f44336; /* สีแดงสำหรับปุ่ม Delete */
+    color: white;
+}
+
+td .btn-delete:hover {
+    background-color: #d32f2f; /* สีแดงเข้มเมื่อเมาส์วาง */
+}
