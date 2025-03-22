@@ -96,8 +96,8 @@ app.get('/user', async (req, res) => {
 app.post('/user', async (req, res) => {
  
   try {
-    let user = req.body;
-    const errors = validateData(user)
+    let users = req.body;
+    const errors = validateData(users)
     if (errors.length > 0) {
       //มี error
       throw {
@@ -105,7 +105,7 @@ app.post('/user', async (req, res) => {
           errors: errors
       }
     }
-    const results = await conn.query('INSERT INTO user SET ?', user)
+    const results = await conn.query('INSERT INTO users SET ?', users)
     res.json({
       message: 'Create user successfully',
       data: results[0]
@@ -148,10 +148,10 @@ app.get('/user/:id', async (req, res) => {
  app.put('/user/:id',async (req, res) => {
   try {
     let id = req.params.id;
-    let updateUser = req.body;
+    let updateUsers = req.body;
     const results = await conn.query
-    ('UPDATE user SET? WHERE id = ?',
-       [updateUser, id]
+    ('UPDATE users SET? WHERE id = ?',
+       [updateUsers, id]
       )
     res.json({
       message: 'Create user successfully',
