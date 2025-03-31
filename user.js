@@ -34,19 +34,19 @@ htmlData += '</table>';
     userDOM.innerHTML = htmlData;
 
     // 3. delete user
-    const deleteDOMs = document.getElementsByClassName('delete');
-    for (let i = 0; i < deleteDOMs.length; i++) {
-        deleteDOMs[i].addEventListener('click', async (event) => {
-            // ดึง id ของ user ที่ต้องการลบ
+    document.querySelectorAll('.btn-delete').forEach(button => {
+        button.addEventListener('click', async (event) => {
             const id = event.target.dataset.id;
-            try {
-                await axios.delete(`${BASE_URL}/user/${id}`);
-                loadData();
-            } catch (error) {
-                console.error('error',error)
+            if (confirm(`คุณต้องการลบผู้ใช้ ID: ${id} หรือไม่?`)) {
+                try {
+                    await axios.delete(`${BASE_URL}/user/${id}`);
+                    loadData(); // โหลดข้อมูลใหม่หลังจากลบ
+                } catch (error) {
+                    console.error('Error deleting user:', error);
+                }
             }
         });
-    }
+    });
     const editButtons = document.getElementsByClassName('btn-edit'); 
     for (let button of editButtons) {
         button.addEventListener('click', (event) => {
