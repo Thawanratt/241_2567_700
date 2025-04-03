@@ -9,7 +9,7 @@ const loadData = async () => {
 
     console.log(response.data);
 
-
+      
     const userDOM = document.getElementById('user');
     // 2. นำ user ทั้งหมด โหลดกลับเข้าไปใน html *แสดงเข้าไปที่ html*
     
